@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JTGEats</title>
+    <title>JTGeats - Authentic Home Food Delivery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,14 +18,19 @@
       <nav class="navbar">
         <div class="container">
           <div class="nav-brand">
-            <h1>Delicious</h1>
+            <h1>JTGeats</h1>
           </div>
           <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+          <div class="nav-actions">
+            <button class="search-icon" aria-label="Search">🔍</button>
+            <button class="cart-icon" aria-label="Shopping Cart">🛒</button>
+          </div>
         </div>
       </nav>
     </header>
@@ -34,12 +39,27 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
-          <h1>Experience Fine Dining</h1>
-          <p>
-            Discover our exquisite menu crafted with the finest ingredients and
-            served with passion.
-          </p>
-          <button class="cta-button">Explore Menu</button>
+          <div class="hero-text">
+            <h1>Authentic Home food in India</h1>
+            <p>
+              JTGeats is a courier service in which authentic home cook food is
+              delivered to a customer.
+            </p>
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search food you love"
+                class="search-input"
+              />
+              <button class="search-button">Search</button>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <img
+              src="https://via.placeholder.com/400x300/2ECC71/FFFFFF?text=Cooking+Illustration"
+              alt="Cooking Illustration"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -56,19 +76,21 @@
               <div class="carousel-item">
                 <div class="item-image">
                   <img
-                    src="https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Grilled+Salmon"
-                    alt="Grilled Salmon"
+                    src="https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Home+made+pizza"
+                    alt="Home made pizza"
                   />
+                  <div class="discount-badge">20%</div>
                 </div>
                 <div class="item-content">
-                  <h3>Grilled Salmon</h3>
-                  <p>
-                    Fresh Atlantic salmon grilled to perfection with herbs and
-                    lemon.
-                  </p>
+                  <h3>Home made pizza</h3>
+                  <div class="item-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">4.7</span>
+                  </div>
+                  <div class="delivery-time">50-79 min</div>
                   <div class="item-footer">
-                    <span class="price">$28.99</span>
-                    <button class="request-dish-btn">Request Dish</button>
+                    <span class="price">₹19</span>
+                    <button class="add-button">+</button>
                   </div>
                 </div>
               </div>
@@ -77,19 +99,20 @@
               <div class="carousel-item">
                 <div class="item-image">
                   <img
-                    src="https://via.placeholder.com/300x200/D2691E/FFFFFF?text=Beef+Tenderloin"
-                    alt="Beef Tenderloin"
+                    src="https://via.placeholder.com/300x200/FF8E53/FFFFFF?text=Tandoori+Chicken"
+                    alt="Tandoori Chicken"
                   />
                 </div>
                 <div class="item-content">
-                  <h3>Beef Tenderloin</h3>
-                  <p>
-                    Premium beef tenderloin cooked to your preference with
-                    seasonal vegetables.
-                  </p>
+                  <h3>Tandoori Chicken</h3>
+                  <div class="item-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">4.3</span>
+                  </div>
+                  <div class="delivery-time">15-29 min</div>
                   <div class="item-footer">
-                    <span class="price">$34.99</span>
-                    <button class="request-dish-btn">Request Dish</button>
+                    <span class="price">₹190</span>
+                    <button class="add-button">+</button>
                   </div>
                 </div>
               </div>
@@ -98,19 +121,21 @@
               <div class="carousel-item">
                 <div class="item-image">
                   <img
-                    src="https://via.placeholder.com/300x200/228B22/FFFFFF?text=Caesar+Salad"
-                    alt="Caesar Salad"
+                    src="https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Chilli+Chicken"
+                    alt="Chilli Chicken"
                   />
+                  <div class="discount-badge">50%</div>
                 </div>
                 <div class="item-content">
-                  <h3>Caesar Salad</h3>
-                  <p>
-                    Crisp romaine lettuce with parmesan cheese and our signature
-                    dressing.
-                  </p>
+                  <h3>Chilli Chicken</h3>
+                  <div class="item-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">4.1</span>
+                  </div>
+                  <div class="delivery-time">30-40 min</div>
                   <div class="item-footer">
-                    <span class="price">$16.99</span>
-                    <button class="request-dish-btn">Request Dish</button>
+                    <span class="price">₹184</span>
+                    <button class="add-button">+</button>
                   </div>
                 </div>
               </div>
@@ -119,19 +144,20 @@
               <div class="carousel-item">
                 <div class="item-image">
                   <img
-                    src="https://via.placeholder.com/300x200/4682B4/FFFFFF?text=Lobster+Bisque"
-                    alt="Lobster Bisque"
+                    src="https://via.placeholder.com/300x200/A8E6CF/FFFFFF?text=Special+Pizza"
+                    alt="Special Pizza"
                   />
                 </div>
                 <div class="item-content">
-                  <h3>Lobster Bisque</h3>
-                  <p>
-                    Rich and creamy lobster soup with a hint of sherry and fresh
-                    herbs.
-                  </p>
+                  <h3>Special Pizza</h3>
+                  <div class="item-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">4.5</span>
+                  </div>
+                  <div class="delivery-time">25-35 min</div>
                   <div class="item-footer">
-                    <span class="price">$22.99</span>
-                    <button class="request-dish-btn">Request Dish</button>
+                    <span class="price">₹116</span>
+                    <button class="add-button">+</button>
                   </div>
                 </div>
               </div>
@@ -140,19 +166,20 @@
               <div class="carousel-item">
                 <div class="item-image">
                   <img
-                    src="https://via.placeholder.com/300x200/8A2BE2/FFFFFF?text=Chocolate+Soufflé"
-                    alt="Chocolate Soufflé"
+                    src="https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Butter+Chicken"
+                    alt="Butter Chicken"
                   />
                 </div>
                 <div class="item-content">
-                  <h3>Chocolate Soufflé</h3>
-                  <p>
-                    Decadent chocolate soufflé served warm with vanilla ice
-                    cream.
-                  </p>
+                  <h3>Butter Chicken</h3>
+                  <div class="item-rating">
+                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                    <span class="rating-text">4.6</span>
+                  </div>
+                  <div class="delivery-time">20-30 min</div>
                   <div class="item-footer">
-                    <span class="price">$12.99</span>
-                    <button class="request-dish-btn">Request Dish</button>
+                    <span class="price">₹220</span>
+                    <button class="add-button">+</button>
                   </div>
                 </div>
               </div>
@@ -160,17 +187,118 @@
           </div>
           <button class="carousel-btn next-btn" id="nextBtn">›</button>
         </div>
+        <div class="request-dish-section">
+          <button class="request-dish-btn">Request a Dish</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Kitchen Section -->
+    <section class="home-kitchen" id="about">
+      <div class="container">
+        <h2>Home Kitchen</h2>
+        <div class="kitchen-grid">
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img
+                src="https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Biryani"
+                alt="Chicken Biryani"
+              />
+              <div class="discount-badge">15%</div>
+            </div>
+            <div class="item-content">
+              <h3>Chicken Biryani</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.8</span>
+              </div>
+              <div class="delivery-time">35-45 min</div>
+              <div class="item-footer">
+                <span class="price">₹250</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img
+                src="https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Dal+Tadka"
+                alt="Dal Tadka"
+              />
+            </div>
+            <div class="item-content">
+              <h3>Dal Tadka</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.5</span>
+              </div>
+              <div class="delivery-time">20-30 min</div>
+              <div class="item-footer">
+                <span class="price">₹120</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img
+                src="https://via.placeholder.com/300x200/A8E6CF/FFFFFF?text=Roti"
+                alt="Butter Roti"
+              />
+            </div>
+            <div class="item-content">
+              <h3>Butter Roti</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.2</span>
+              </div>
+              <div class="delivery-time">15-25 min</div>
+              <div class="item-footer">
+                <span class="price">₹15</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img
+                src="https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Paneer+Curry"
+                alt="Paneer Butter Masala"
+              />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Paneer Butter Masala</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Video Section -->
     <section class="video-section">
       <div class="container">
-        <h2>Our Kitchen Story</h2>
+        <h2>We are providing best home cooked food delivery service</h2>
+        <p class="video-subtitle">
+          Away from home and craving the tasty homemade recipes? Choose from a
+          selection of our delicious home cooked dishes
+        </p>
         <div class="video-container">
           <video
             id="restaurantVideo"
-            poster="https://via.placeholder.com/800x450/333333/FFFFFF?text=Video+Poster"
+            poster="https://via.placeholder.com/800x450/2ECC71/FFFFFF?text=Home+Cooked+Food+Video"
           >
             <source
               src="https://www.w3schools.com/html/mov_bbb.mp4"
@@ -180,10 +308,46 @@
           </video>
           <button class="play-button" id="playButton">
             <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-              <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
-              <path d="M23 20L40 30L23 40V20Z" fill="#333" />
+              <circle cx="30" cy="30" r="30" fill="#2ECC71" />
+              <path d="M23 20L40 30L23 40V20Z" fill="#fff" />
             </svg>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact/Seller Form Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-content">
+          <div class="contact-form-wrapper">
+            <h2>Do you have a question or want to become a seller?</h2>
+            <p class="contact-subtitle">
+              Fill this form and our manager will contact you next 48 hours.
+            </p>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your e-mail" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Your message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-button">Submit</button>
+            </form>
+          </div>
+          <div class="contact-illustration">
+            <img
+              src="https://via.placeholder.com/400x300/2ECC71/FFFFFF?text=Delivery+Boy+on+Scooter"
+              alt="Delivery Boy on Scooter"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -193,27 +357,26 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Delicious</h3>
+            <h3>JTGeats</h3>
             <p>
-              Experience fine dining at its best with our carefully crafted menu
-              and exceptional service.
+              Authentic home food delivery service bringing the taste of home to
+              your doorstep.
             </p>
           </div>
           <div class="footer-section">
-            <h4>Contact Info</h4>
-            <p>
-              123 Restaurant Street<br />
-              Food City, FC 12345<br />
-              Phone: (555) 123-4567
-            </p>
+            <div class="footer-links">
+              <a href="#home">Home</a>
+              <a href="#about">About</a>
+              <a href="#menu">Menu</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+            </div>
           </div>
           <div class="footer-section">
-            <h4>Hours</h4>
-            <p>
-              Monday - Thursday: 5:00 PM - 10:00 PM<br />
-              Friday - Saturday: 5:00 PM - 11:00 PM<br />
-              Sunday: 4:00 PM - 9:00 PM
-            </p>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook">📘</a>
+              <a href="#" aria-label="Instagram">📷</a>
+            </div>
           </div>
         </div>
       </div>
