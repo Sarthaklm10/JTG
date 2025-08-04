@@ -14,7 +14,7 @@ const videoContainer = document.querySelector(".video-container");
 // Carousel functionality
 let currentSlide = 0;
 const totalSlides = document.querySelectorAll(".carousel-item").length;
-const slideWidth = 300; // 280px width + 20px margin
+const slideWidth = 300; // 280px width + 20px gap
 let autoSlideInterval;
 
 function updateCarousel() {

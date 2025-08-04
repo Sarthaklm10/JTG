@@ -163,7 +163,8 @@ body.modal-open {
 /* Popular Items Section */
 .popular-items {
   padding: 80px 0;
-  background: #f8f9fa;
+  position: relative;
+  background: linear-gradient(90deg, #f8f9fa 50%, #2ECC71 50%);
 }
 
 .popular-items h2 {
@@ -171,33 +172,39 @@ body.modal-open {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #333;
+  position: relative;
+  z-index: 10;
 }
 
 .carousel-container {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  z-index: 10;
 }
 
 .carousel-wrapper {
   overflow: hidden;
   border-radius: 10px;
+  background: transparent;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease;
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .carousel-item {
   min-width: 280px;
-  margin-right: 20px;
   background: white;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
+  flex-shrink: 0;
 }
 
 .carousel-item:hover {
@@ -357,7 +364,8 @@ body.modal-open {
 /* Home Kitchen Section */
 .home-kitchen {
   padding: 80px 0;
-  background: #fff;
+  position: relative;
+  background: linear-gradient(90deg, #2ECC71 50%, #f8f9fa 50%);
 }
 
 .home-kitchen h2 {
@@ -365,6 +373,8 @@ body.modal-open {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #333;
+  position: relative;
+  z-index: 10;
 }
 
 .kitchen-grid {
@@ -373,6 +383,9 @@ body.modal-open {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
 }
 
 .kitchen-item {
@@ -466,7 +479,8 @@ body.modal-open {
 /* Video Section */
 .video-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #F8F9FA 0%, #E8F5E8 100%);
+  position: relative;
+  background: linear-gradient(90deg, #f8f9fa 50%, #2ECC71 50%);
 }
 
 .video-section h2 {
@@ -477,6 +491,8 @@ body.modal-open {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .video-subtitle {
@@ -487,6 +503,8 @@ body.modal-open {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .video-container {
@@ -496,6 +514,7 @@ body.modal-open {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .video-container video {
