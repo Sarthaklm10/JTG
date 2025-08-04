@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTGEats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-brand">
+            <h1>Delicious</h1>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Experience Fine Dining</h1>
+          <p>
+            Discover our exquisite menu crafted with the finest ingredients and
+            served with passion.
+          </p>
+          <button class="cta-button">Explore Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Items Section -->
+    <section class="popular-items" id="menu">
+      <div class="container">
+        <h2>Popular Items</h2>
+        <div class="carousel-container">
+          <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
+          <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Carousel Item 1 -->
+              <div class="carousel-item">
+                <div class="item-image">
+                  <img
+                    src="https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Grilled+Salmon"
+                    alt="Grilled Salmon"
+                  />
+                </div>
+                <div class="item-content">
+                  <h3>Grilled Salmon</h3>
+                  <p>
+                    Fresh Atlantic salmon grilled to perfection with herbs and
+                    lemon.
+                  </p>
+                  <div class="item-footer">
+                    <span class="price">$28.99</span>
+                    <button class="request-dish-btn">Request Dish</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 2 -->
+              <div class="carousel-item">
+                <div class="item-image">
+                  <img
+                    src="https://via.placeholder.com/300x200/D2691E/FFFFFF?text=Beef+Tenderloin"
+                    alt="Beef Tenderloin"
+                  />
+                </div>
+                <div class="item-content">
+                  <h3>Beef Tenderloin</h3>
+                  <p>
+                    Premium beef tenderloin cooked to your preference with
+                    seasonal vegetables.
+                  </p>
+                  <div class="item-footer">
+                    <span class="price">$34.99</span>
+                    <button class="request-dish-btn">Request Dish</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 3 -->
+              <div class="carousel-item">
+                <div class="item-image">
+                  <img
+                    src="https://via.placeholder.com/300x200/228B22/FFFFFF?text=Caesar+Salad"
+                    alt="Caesar Salad"
+                  />
+                </div>
+                <div class="item-content">
+                  <h3>Caesar Salad</h3>
+                  <p>
+                    Crisp romaine lettuce with parmesan cheese and our signature
+                    dressing.
+                  </p>
+                  <div class="item-footer">
+                    <span class="price">$16.99</span>
+                    <button class="request-dish-btn">Request Dish</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 4 -->
+              <div class="carousel-item">
+                <div class="item-image">
+                  <img
+                    src="https://via.placeholder.com/300x200/4682B4/FFFFFF?text=Lobster+Bisque"
+                    alt="Lobster Bisque"
+                  />
+                </div>
+                <div class="item-content">
+                  <h3>Lobster Bisque</h3>
+                  <p>
+                    Rich and creamy lobster soup with a hint of sherry and fresh
+                    herbs.
+                  </p>
+                  <div class="item-footer">
+                    <span class="price">$22.99</span>
+                    <button class="request-dish-btn">Request Dish</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Item 5 -->
+              <div class="carousel-item">
+                <div class="item-image">
+                  <img
+                    src="https://via.placeholder.com/300x200/8A2BE2/FFFFFF?text=Chocolate+Soufflé"
+                    alt="Chocolate Soufflé"
+                  />
+                </div>
+                <div class="item-content">
+                  <h3>Chocolate Soufflé</h3>
+                  <p>
+                    Decadent chocolate soufflé served warm with vanilla ice
+                    cream.
+                  </p>
+                  <div class="item-footer">
+                    <span class="price">$12.99</span>
+                    <button class="request-dish-btn">Request Dish</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next-btn" id="nextBtn">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container">
+        <h2>Our Kitchen Story</h2>
+        <div class="video-container">
+          <video
+            id="restaurantVideo"
+            poster="https://via.placeholder.com/800x450/333333/FFFFFF?text=Video+Poster"
+          >
+            <source
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <button class="play-button" id="playButton">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <circle cx="30" cy="30" r="30" fill="rgba(255,255,255,0.9)" />
+              <path d="M23 20L40 30L23 40V20Z" fill="#333" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Delicious</h3>
+            <p>
+              Experience fine dining at its best with our carefully crafted menu
+              and exceptional service.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>
+              123 Restaurant Street<br />
+              Food City, FC 12345<br />
+              Phone: (555) 123-4567
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Hours</h4>
+            <p>
+              Monday - Thursday: 5:00 PM - 10:00 PM<br />
+              Friday - Saturday: 5:00 PM - 11:00 PM<br />
+              Sunday: 4:00 PM - 9:00 PM
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Request Dish Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Request Dish</h3>
+          <button class="close-button" id="closeButton">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="requestForm">
+            <div class="form-group">
+              <label for="customerName">Your Name</label>
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="customerEmail">Email Address</label>
+              <input
+                type="email"
+                id="customerEmail"
+                name="customerEmail"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="dishRequest">Dish Request</label>
+              <textarea
+                id="dishRequest"
+                name="dishRequest"
+                rows="4"
+                placeholder="Please describe your dish request or any special requirements..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="">Select a time</option>
+                <option value="lunch">Lunch (12:00 PM - 3:00 PM)</option>
+                <option value="dinner">Dinner (6:00 PM - 10:00 PM)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-cancel" id="cancelButton">Cancel</button>
+          <button class="btn-submit" id="submitButton">Submit Request</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
