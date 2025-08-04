@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>JTGeats - Authentic Home Food Delivery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
@@ -18,8 +23,9 @@
       <nav class="navbar">
         <div class="container">
           <div class="nav-brand">
-            <h1>JTGeats</h1>
+            <p class="jtg">JTGeats</p>
           </div>
+
           <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -28,46 +34,276 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div class="nav-actions">
-            <button class="search-icon" aria-label="Search">🔍</button>
-            <button class="cart-icon" aria-label="Shopping Cart">🛒</button>
+            <button class="search-icon" aria-label="Search">
+              <img src="./assets/images/search.svg" alt="" />
+            </button>
+            <button class="cart-icon" aria-label="Shopping Cart">
+              <img src="/assets/images/bag.svg" alt="" />
+            </button>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- Main-section -->
+    <section class="main" id="home">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Authentic Home food in India</h1>
+        <div class="left-container">
+          <div>
+            <p id="main-heading">Authentic Home food in India</p>
+          </div>
+          <div class="jtg-text">
             <p>
               JTGeats is a courier service in which authentic home cook food is
               delivered to a customer.
             </p>
-            <div class="search-bar">
-              <input
-                type="text"
-                placeholder="Search food you love"
-                class="search-input"
-              />
-              <button class="search-button">Search</button>
+          </div>
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search food you love"
+              class="search-input"
+            />
+            <button class="search-button">Search</button>
+          </div>
+        </div>
+        <div class="right-container">
+          <img src="./assets/images/1.svg" alt="Cooking Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Kitchen Section -->
+    <section class="home-kitchen" id="about">
+      <div class="container">
+        <h2>Home Kitchen</h2>
+        <div class="kitchen-grid">
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
             </div>
           </div>
-          <div class="hero-illustration">
-            <img
-              src="https://via.placeholder.com/400x300/2ECC71/FFFFFF?text=Cooking+Illustration"
-              alt="Cooking Illustration"
-            />
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="kitchen-item">
+            <div class="item-image">
+              <img src="./assets/images/pizza1.jpg" alt="Home made pizza" />
+              <div class="discount-badge">25%</div>
+            </div>
+            <div class="item-content">
+              <h3>Home made pizza</h3>
+              <div class="item-rating">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="rating-text">4.7</span>
+              </div>
+              <div class="delivery-time">25-35 min</div>
+              <div class="item-footer">
+                <span class="price">₹180</span>
+                <button class="add-button">+</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Popular Items Section -->
+    <!-- Carousel-section -->
     <section class="popular-items" id="menu">
       <div class="container">
-        <h2>Popular Items</h2>
+        <h2 style="text-align: left">Home Kitchen</h2>
         <div class="carousel-container">
           <button class="carousel-btn prev-btn" id="prevBtn">‹</button>
           <div class="carousel-wrapper">
@@ -193,146 +429,39 @@
       </div>
     </section>
 
-    <!-- Home Kitchen Section -->
-    <section class="home-kitchen" id="about">
-      <div class="container">
-        <h2>Home Kitchen</h2>
-        <div class="kitchen-grid">
-          <div class="kitchen-item">
-            <div class="item-image">
-              <img
-                src="https://via.placeholder.com/300x200/FF6B6B/FFFFFF?text=Biryani"
-                alt="Chicken Biryani"
-              />
-              <div class="discount-badge">15%</div>
-            </div>
-            <div class="item-content">
-              <h3>Chicken Biryani</h3>
-              <div class="item-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="rating-text">4.8</span>
-              </div>
-              <div class="delivery-time">35-45 min</div>
-              <div class="item-footer">
-                <span class="price">₹250</span>
-                <button class="add-button">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="kitchen-item">
-            <div class="item-image">
-              <img
-                src="https://via.placeholder.com/300x200/4ECDC4/FFFFFF?text=Dal+Tadka"
-                alt="Dal Tadka"
-              />
-            </div>
-            <div class="item-content">
-              <h3>Dal Tadka</h3>
-              <div class="item-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="rating-text">4.5</span>
-              </div>
-              <div class="delivery-time">20-30 min</div>
-              <div class="item-footer">
-                <span class="price">₹120</span>
-                <button class="add-button">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="kitchen-item">
-            <div class="item-image">
-              <img
-                src="https://via.placeholder.com/300x200/A8E6CF/FFFFFF?text=Roti"
-                alt="Butter Roti"
-              />
-            </div>
-            <div class="item-content">
-              <h3>Butter Roti</h3>
-              <div class="item-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="rating-text">4.2</span>
-              </div>
-              <div class="delivery-time">15-25 min</div>
-              <div class="item-footer">
-                <span class="price">₹15</span>
-                <button class="add-button">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="kitchen-item">
-            <div class="item-image">
-              <img
-                src="https://via.placeholder.com/300x200/FFD93D/FFFFFF?text=Paneer+Curry"
-                alt="Paneer Butter Masala"
-              />
-              <div class="discount-badge">25%</div>
-            </div>
-            <div class="item-content">
-              <h3>Paneer Butter Masala</h3>
-              <div class="item-rating">
-                <span class="stars">⭐⭐⭐⭐⭐</span>
-                <span class="rating-text">4.7</span>
-              </div>
-              <div class="delivery-time">25-35 min</div>
-              <div class="item-footer">
-                <span class="price">₹180</span>
-                <button class="add-button">+</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Video Section -->
+    <!-- Video Section-->
     <section class="video-section">
-      <div class="container">
+      <div class="sub-container-first">
         <h2>We are providing best home cooked food delivery service</h2>
         <p class="video-subtitle">
           Away from home and craving the tasty homemade recipes? Choose from a
           selection of our delicious home cooked dishes
         </p>
-        <div class="video-container">
-          <video
-            id="restaurantVideo"
-            poster="https://via.placeholder.com/800x450/2ECC71/FFFFFF?text=Home+Cooked+Food+Video"
-          >
-            <source
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-          <button class="play-button" id="playButton">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-              <circle cx="30" cy="30" r="30" fill="#2ECC71" />
-              <path d="M23 20L40 30L23 40V20Z" fill="#fff" />
-            </svg>
-          </button>
-        </div>
       </div>
+      <video src="./assets/videos/vid1.mp4" id="restaurantVideo"></video>
+      <div class="sub-container-second"></div>
     </section>
 
-    <!-- Contact/Seller Form Section -->
+    <!-- Contact-section -->
     <section class="contact-section" id="contact">
       <div class="container">
-        <div class="contact-content">
-          <div class="contact-form-wrapper">
-            <h2>Do you have a question or want to become a seller?</h2>
-            <p class="contact-subtitle">
+        <div class="left-container-contact">
+          <div>
+            <p class="contact-text">
+              Do you have a question <br />
+              or want to become a seller?
+            </p>
+            <p class="contact-text-small">
               Fill this form and our manager will contact you next 48 hours.
             </p>
+          </div>
+          <div>
             <form class="contact-form">
-              <div class="form-group">
+              <div class="form-group1">
                 <input type="text" placeholder="Your Name" required />
-              </div>
-              <div class="form-group">
                 <input type="email" placeholder="Your e-mail" required />
               </div>
-              <div class="form-group">
+              <div class="form-group2">
                 <textarea
                   placeholder="Your message"
                   rows="5"
@@ -342,12 +471,12 @@
               <button type="submit" class="submit-button">Submit</button>
             </form>
           </div>
-          <div class="contact-illustration">
-            <img
-              src="https://via.placeholder.com/400x300/2ECC71/FFFFFF?text=Delivery+Boy+on+Scooter"
-              alt="Delivery Boy on Scooter"
-            />
-          </div>
+        </div>
+        <div class="right-container-contact">
+          <img
+            src="./assets/images/scooter.svg"
+            alt="Delivery Boy on Scooter"
+          />
         </div>
       </div>
     </section>
@@ -355,30 +484,29 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>JTGeats</h3>
-            <p>
-              Authentic home food delivery service bringing the taste of home to
-              your doorstep.
-            </p>
+        <div class="footer-container">
+          <div class="footer-item1">
+            <p class="jtg">JTGeats</p>
           </div>
-          <div class="footer-section">
-            <div class="footer-links">
-              <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#menu">Menu</a>
-              <a href="#blog">Blog</a>
-              <a href="#contact">Contact</a>
-            </div>
+
+          <div class="footer-item2">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
           </div>
-          <div class="footer-section">
-            <div class="social-icons">
-              <a href="#" aria-label="Facebook">📘</a>
-              <a href="#" aria-label="Instagram">📷</a>
-            </div>
+
+          <div class="footer-item3">
+            <a href="#" aria-label="Facebook"
+              ><img src="./assets/images/facebook.svg" alt="facebook-logo"
+            /></a>
+            <a href="#" aria-label="Instagram"
+              ><img src="./assets/images/instagram.svg" alt="instagram-logo"
+            /></a>
           </div>
         </div>
+        <hr class="footer-hr" />
       </div>
     </footer>
 
@@ -436,6 +564,6 @@
       </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
