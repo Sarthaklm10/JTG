@@ -14,7 +14,7 @@ const videoContainer = document.querySelector(".video-container");
 // Carousel functionality
 let currentSlide = 0;
 const totalSlides = document.querySelectorAll(".carousel-item").length;
-const slideWidth = 380; // 350px width + 30px margin
+const slideWidth = 300; // 280px width + 20px margin
 let autoSlideInterval;
 
 function updateCarousel() {
@@ -201,6 +201,49 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         behavior: "smooth",
       });
     }
+  });
+});
+
+// Contact form functionality
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const email = contactForm.querySelector('input[type="email"]').value;
+    const message = contactForm.querySelector('textarea').value;
+    
+    // Basic validation
+    if (name && email && message) {
+      alert('Thank you for your message! Our manager will contact you within 48 hours.');
+      contactForm.reset();
+    } else {
+      alert('Please fill in all fields.');
+    }
+  });
+}
+
+// Add functionality for add buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const addButtons = document.querySelectorAll('.add-button');
+  
+  addButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // Add animation effect
+      button.style.transform = 'scale(1.2)';
+      setTimeout(() => {
+        button.style.transform = 'scale(1)';
+      }, 200);
+      
+      // Show feedback
+      const itemName = button.closest('.carousel-item, .kitchen-item').querySelector('h3').textContent;
+      alert(`${itemName} added to cart!`);
+    });
   });
 });
 
