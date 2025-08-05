@@ -8,7 +8,7 @@ const closeButton = document.getElementById("closeButton");
 const cancelButton = document.getElementById("cancelButton");
 const submitButton = document.getElementById("submitButton");
 const video = document.getElementById("restaurantVideo");
-const playButton = document.getElementById("playButton");
+// const playButton = document.getElementById("playButton");
 const videoContainer = document.querySelector(".video-container");
 
 // Carousel functionality
@@ -153,33 +153,39 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Video functionality
-playButton.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
-    videoContainer.classList.add("playing");
-  } else {
-    video.pause();
-    videoContainer.classList.remove("playing");
+// === CORRECTED VIDEO FUNCTIONALITY ===
+
+// This function toggles the video play/pause state
+function togglePlay() {
+  // We check if the video and videoContainer elements exist before trying to use them
+  if (video && videoContainer) {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   }
-});
+}
 
-video.addEventListener("click", () => {
-  if (video.paused) {
-    video.play();
+// Ensure the video and container exist before adding listeners
+if (video && videoContainer) {
+  // Add class 'playing' when video plays
+  video.addEventListener("play", () => {
     videoContainer.classList.add("playing");
-  } else {
-    video.pause();
+  });
+
+  // Remove class 'playing' when video is paused or ends
+  video.addEventListener("pause", () => {
     videoContainer.classList.remove("playing");
-  }
-});
+  });
 
-video.addEventListener("pause", () => {
-  videoContainer.classList.remove("playing");
-});
+  video.addEventListener("ended", () => {
+    videoContainer.classList.remove("playing");
+  });
 
-video.addEventListener("ended", () => {
-  videoContainer.classList.remove("playing");
-});
+  // Listen for clicks on the ENTIRE video container to play/pause
+  videoContainer.addEventListener("click", togglePlay);
+}
 
 // Initialize carousel
 document.addEventListener("DOMContentLoaded", () => {
@@ -249,16 +255,4 @@ document.addEventListener("DOMContentLoaded", () => {
       alert(`${itemName} added to cart!`);
     });
   });
-});
-
-// Add scroll effect to header
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header");
-  if (window.scrollY > 100) {
-    header.style.background = "rgba(255, 255, 255, 0.95)";
-    header.style.backdropFilter = "blur(10px)";
-  } else {
-    header.style.background = "#fff";
-    header.style.backdropFilter = "none";
-  }
 });
