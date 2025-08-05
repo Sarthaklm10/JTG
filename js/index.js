@@ -1,38 +1,80 @@
-// DOM Elements
-const carouselTrack = document.getElementById("carouselTrack");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
 const modalOverlay = document.getElementById("modalOverlay");
 const requestDishBtns = document.querySelectorAll(".request-dish-btn");
 const closeButton = document.getElementById("closeButton");
 const cancelButton = document.getElementById("cancelButton");
 const submitButton = document.getElementById("submitButton");
 const video = document.getElementById("restaurantVideo");
-// const playButton = document.getElementById("playButton");
-const videoContainer = document.querySelector(".video-container");
+const videoContainer = document.getElementById("videoContainer");
+const videoOverlay = document.getElementById("videoOverlay");
+const carouselTrack = document.getElementById("carouselTrack");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
-// Carousel functionality
+// === Carousel ===
 let currentSlide = 0;
-const totalSlides = document.querySelectorAll(".carousel-item").length;
-const slideWidth = 300; // 280px width + 20px margin
+let totalSlides = 0;
+let slideWidth = 0;
 let autoSlideInterval;
 
-function updateCarousel() {
+function initializeCarousel() {
+  if (!carouselTrack || !prevBtn || !nextBtn) return;
+
+  const slides = carouselTrack.querySelectorAll(".carousel-item");
+  totalSlides = slides.length;
+
+  if (totalSlides > 3) {
+    const slideStyle = window.getComputedStyle(slides[0]);
+    const gap = parseInt(slideStyle.marginRight, 10) || 30;
+    slideWidth = slides[0].offsetWidth + gap;
+
+    // Infinite loop effect
+    for (let i = 0; i < 3; i++) {
+      carouselTrack.appendChild(slides[i].cloneNode(true));
+    }
+    startAutoSlide();
+  } else {
+    // Not enough items to slide
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
+  }
+}
+
+function updateCarousel(transition = true) {
+  if (!carouselTrack) return;
   const translateX = -currentSlide * slideWidth;
+  carouselTrack.style.transition = transition ? "transform 0.5s ease" : "none";
   carouselTrack.style.transform = `translateX(${translateX}px)`;
 }
 
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
+  currentSlide++;
   updateCarousel();
+
+  if (currentSlide >= totalSlides) {
+    setTimeout(() => {
+      currentSlide = 0;
+      updateCarousel(false);
+    }, 500);
+  }
 }
 
 function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateCarousel();
+  if (currentSlide <= 0) {
+    currentSlide = totalSlides;
+    updateCarousel(false);
+    // Timeout
+    setTimeout(() => {
+      currentSlide--;
+      updateCarousel(true);
+    }, 20);
+  } else {
+    currentSlide--;
+    updateCarousel();
+  }
 }
 
 function startAutoSlide() {
+  stopAutoSlide(); // Clear any existing interval
   autoSlideInterval = setInterval(nextSlide, 5000);
 }
 
@@ -40,219 +82,79 @@ function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
 
-// Event listeners for carousel
-nextBtn.addEventListener("click", () => {
-  nextSlide();
-  stopAutoSlide();
-  startAutoSlide();
-});
-
-prevBtn.addEventListener("click", () => {
-  prevSlide();
-  stopAutoSlide();
-  startAutoSlide();
-});
-
-// Pause auto-slide on hover
-const carouselContainer = document.querySelector(".carousel-container");
-carouselContainer.addEventListener("mouseenter", stopAutoSlide);
-carouselContainer.addEventListener("mouseleave", startAutoSlide);
-
-// Keyboard navigation for carousel
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowLeft") {
-    prevSlide();
-    stopAutoSlide();
-    startAutoSlide();
-  } else if (e.key === "ArrowRight") {
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener("click", () => {
     nextSlide();
     stopAutoSlide();
-    startAutoSlide();
-  }
-});
-
-// Touch/swipe functionality for mobile
-let startX = 0;
-let endX = 0;
-
-carouselTrack.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  stopAutoSlide();
-});
-
-carouselTrack.addEventListener("touchend", (e) => {
-  endX = e.changedTouches[0].clientX;
-  handleSwipe();
-  startAutoSlide();
-});
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-  const diff = startX - endX;
-
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      nextSlide();
-    } else {
-      prevSlide();
-    }
-  }
+  });
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    stopAutoSlide();
+  });
 }
 
-// Modal functionality
+const carouselContainer = document.querySelector(".carousel-container");
+if (carouselContainer) {
+  carouselContainer.addEventListener("mouseenter", stopAutoSlide);
+  carouselContainer.addEventListener("mouseleave", startAutoSlide);
+}
+
+// === Modal ===
 function openModal() {
-  modalOverlay.classList.add("active");
-  document.body.classList.add("modal-open");
+  if (modalOverlay) {
+    modalOverlay.classList.add("active");
+    document.body.classList.add("modal-open");
+  }
 }
 
 function closeModal() {
-  modalOverlay.classList.remove("active");
-  document.body.classList.remove("modal-open");
-  // Reset form
-  document.getElementById("requestForm").reset();
+  if (modalOverlay) {
+    modalOverlay.classList.remove("active");
+    document.body.classList.remove("modal-open");
+    const form = document.getElementById("requestForm");
+    if (form) form.reset();
+  }
 }
 
-// Event listeners for modal
-requestDishBtns.forEach((btn) => {
-  btn.addEventListener("click", openModal);
-});
-
-closeButton.addEventListener("click", closeModal);
-cancelButton.addEventListener("click", closeModal);
-
-submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  // Get form data
-  const form = document.getElementById("requestForm");
-  const formData = new FormData(form);
-
-  // Validate form
-  if (form.checkValidity()) {
-    // In a real application, you would send this data to a server
-    alert("Request submitted successfully! We will contact you soon.");
-    closeModal();
-  } else {
-    // Show validation errors
-    form.reportValidity();
-  }
-});
-
-// Close modal when clicking outside
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) {
-    closeModal();
-  }
-});
-
-// Close modal with Escape key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
-    closeModal();
-  }
-});
-
-// Video functionality
-// === CORRECTED VIDEO FUNCTIONALITY ===
-
-// This function toggles the video play/pause state
-function togglePlay() {
-  // We check if the video and videoContainer elements exist before trying to use them
-  if (video && videoContainer) {
-    if (video.paused) {
-      video.play();
+if (requestDishBtns.length > 0)
+  requestDishBtns.forEach((btn) => btn.addEventListener("click", openModal));
+if (closeButton) closeButton.addEventListener("click", closeModal);
+if (cancelButton) cancelButton.addEventListener("click", closeModal);
+if (submitButton) {
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const form = document.getElementById("requestForm");
+    if (form.checkValidity()) {
+      alert("Request submitted successfully!");
+      closeModal();
     } else {
-      video.pause();
+      form.reportValidity();
     }
-  }
+  });
+}
+if (modalOverlay) {
+  modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
 }
 
-// Ensure the video and container exist before adding listeners
-if (video && videoContainer) {
-  // Add class 'playing' when video plays
-  video.addEventListener("play", () => {
-    videoContainer.classList.add("playing");
-  });
-
-  // Remove class 'playing' when video is paused or ends
-  video.addEventListener("pause", () => {
-    videoContainer.classList.remove("playing");
-  });
-
+// === Video Player ===
+if (videoContainer && video && videoOverlay) {
+  const playVideo = () => {
+    video.controls = true;
+    video.play();
+  };
+  videoOverlay.addEventListener("click", playVideo);
+  video.addEventListener("play", () => videoContainer.classList.add("playing"));
+  video.addEventListener("pause", () =>
+    videoContainer.classList.remove("playing")
+  );
   video.addEventListener("ended", () => {
     videoContainer.classList.remove("playing");
-  });
-
-  // Listen for clicks on the ENTIRE video container to play/pause
-  videoContainer.addEventListener("click", togglePlay);
-}
-
-// Initialize carousel
-document.addEventListener("DOMContentLoaded", () => {
-  updateCarousel();
-  startAutoSlide();
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      const headerHeight = document.querySelector(".header").offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-// Contact form functionality
-const contactForm = document.querySelector(".contact-form");
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = contactForm.querySelector('input[type="text"]').value;
-    const email = contactForm.querySelector('input[type="email"]').value;
-    const message = contactForm.querySelector("textarea").value;
-
-    // Basic validation
-    if (name && email && message) {
-      alert(
-        "Thank you for your message! Our manager will contact you within 48 hours."
-      );
-      contactForm.reset();
-    } else {
-      alert("Please fill in all fields.");
-    }
+    video.controls = false;
   });
 }
 
-// Add functionality for add buttons
 document.addEventListener("DOMContentLoaded", () => {
-  const addButtons = document.querySelectorAll(".add-button");
-
-  addButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      // Add animation effect
-      button.style.transform = "scale(1.2)";
-      setTimeout(() => {
-        button.style.transform = "scale(1)";
-      }, 200);
-
-      // Show feedback
-      const itemName = button
-        .closest(".carousel-item, .kitchen-item")
-        .querySelector("h3").textContent;
-      alert(`${itemName} added to cart!`);
-    });
-  });
+  initializeCarousel();
 });
