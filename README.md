@@ -25,6 +25,12 @@ A restaurant landing page implementation built with pure HTML5, CSS3, and vanill
 - **Responsive Layout**: Mobile-friendly design that adapts to different screen sizes
 - **Modern CSS**: Flexbox, Grid, and CSS transitions for smooth animations
 
+## Screenshots
+
+![Screenshot 1](./screenshots/1.png)
+![Screenshot 2](./screenshots/2.png)
+![Screenshot 3](./screenshots/3.png)
+
 ## File Structure
 
 ```
